@@ -10,5 +10,5 @@ const Block = require("./block");
  console.log(Block.genesis().toString());
 
  const testBlock = Block.mineBlock(Block.genesis(),"testDaten")
- console.log(testNlock.toString());
+ console.log(testBlock.toString());
 //console.log("Hello World");
