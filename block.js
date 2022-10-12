@@ -1,3 +1,5 @@
+const SHA256 = require("crypto-js/sha256");
+
 class Block{
     constructor(timestamp,lastHash,hash,data){
 
@@ -21,9 +23,11 @@ class Block{
 
         const timestamp = Date.now(); // Zeit im ms seit 01.01.1970 | UNIX
         const lastHash  = lastBlock.hash;
-        const hash      = "to do HASH";
+        const hash      = Block.hash(timestamp,lastHash,ownData);
         return new this(timestamp,lastHash,hash,ownData);
-
+    }
+    static hash(timestamp,lastHash,data){
+        return SHA256(`${timestamp}${lastHash}${data}`).toString();
     }
 }
 module.exports = Block; // Export als Modul
