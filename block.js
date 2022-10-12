@@ -13,6 +13,9 @@ class Block{
         Hash:       ${this.hash}
         Data:       ${this.data}`
     }
+    static genesis(){ // 1. Block der chain
 
+        return new this("Genesis time","-----","xABc1234",["data1","data2,data3"]); // call constructor
+    }
 }
 module.exports = Block; // Export als Modul
