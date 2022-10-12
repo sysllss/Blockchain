@@ -24,6 +24,8 @@ class Block{
         const timestamp = Date.now(); // Zeit im ms seit 01.01.1970 | UNIX
         const lastHash  = lastBlock.hash;
         const hash      = Block.hash(timestamp,lastHash,ownData);
+        // Mining energy time consumption
+        // Proof of work
         return new this(timestamp,lastHash,hash,ownData);
     }
     static hash(timestamp,lastHash,data){
