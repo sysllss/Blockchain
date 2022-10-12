@@ -15,3 +15,4 @@ class Block{
     }
 
 }
+module.exports = Block; // Export als Modul
